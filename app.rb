@@ -10,6 +10,13 @@ get '/secret' do
   "hello my name is Jimmy"
 end
 
-get '/hamster' do
+get '/random-hamster' do
+  @name = ["almond", "misty", "nutty"].sample.capitalize
+  erb(:index)
+end
+
+get '/named-hamster' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
