@@ -15,8 +15,12 @@ get '/random-hamster' do
   erb(:index)
 end
 
-get '/named-hamster' do
+post '/named-hamster' do
   p params
   @name = params[:name]
   erb(:index)
+end
+
+get '/hamster-form' do
+  erb(:hamster_form)
 end
